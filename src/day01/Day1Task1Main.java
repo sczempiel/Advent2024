@@ -1,39 +1,28 @@
 package day01;
 
-import java.util.List;
-
 import util.AdventUtils;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class Day1Task1Main {
 
 	public static void main(String[] args) {
-		List<String> calibrations = AdventUtils.getStringInput(1);
+		List<Integer> list1 = new ArrayList<>();
+		List<Integer> list2 = new ArrayList<>();
 
-		int result = 0;
+		AdventUtils.getStringInput(1).stream().map(s -> s.split("   ")).forEach(s -> {
+			list1.add(Integer.valueOf(s[0]));
+			list2.add(Integer.valueOf(s[1]));
+		});
 
-		for (String cal : calibrations) {
-			char[] chars = cal.toCharArray();
+		list1.sort(Comparator.naturalOrder());
+		list2.sort(Comparator.naturalOrder());
 
-			Character first = null;
-			for (char element : chars) {
-				first = element;
-				if (Character.isDigit(first)) {
-					break;
-				}
-			}
+		int totalDist = IntStream.range(0, list1.size()).map(i -> list1.get(i) - list2.get(i)).map(Math::abs).sum();
 
-			Character last = null;
-			for (int i = chars.length - 1; i >= 0; i--) {
-				last = chars[i];
-				if (Character.isDigit(last)) {
-					break;
-				}
-			}
-
-			result += Integer.valueOf(String.valueOf(first) + String.valueOf(last));
-
-		}
-
-		AdventUtils.publishResult(1, 1, result);
+		AdventUtils.publishResult(1, 1, totalDist);
 	}
 }
