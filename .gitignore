@@ -1,24 +1,37 @@
-# Compiled class file
-*.class
+### Project ###
+**/bundle/*
+maven/settings.xml
+**/MANIFEST.MF
+**/node_modules/*
+**/node/*
 
-# Log file
-*.log
+### Maven ###
+target/
+.m2/repository/
+.mvn/
 
-# BlueJ files
-*.ctxt
+### IntelliJ IDEA ###
+/.idea/*
+!/.idea/codeStyles
+!/.idea/inspectionProfiles
+!/.idea/encodings.xml
+!/.idea/prettier.xml
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+### VS Code ###
+.vscode/
+/*.code-workspace
