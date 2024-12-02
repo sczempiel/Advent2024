@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//54906
 public class Day1Task2Main {
 
 	public static void main(String[] args) {
